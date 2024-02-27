@@ -1,0 +1,1946 @@
+# PIPELINE DEFINITION
+# Name: data-preprocess-pipeline
+# Inputs:
+#    data_filepath: str [Default: 'ta-charts-data/origin_data']
+#    display_name: str [Default: 'data-pipeline-job20240208162403']
+#    end_date: str [Default: '2023-12-22']
+#    end_date_aug: str [Default: '2021-12-31']
+#    project: str [Default: 'TA-model-data-preprocess']
+#    region: str [Default: 'us-east1']
+#    start_date: str [Default: '2000-01-04']
+#    start_date_aug: str [Default: '2000-01-04']
+components:
+  comp-augment-data:
+    executorLabel: exec-augment-data
+    inputDefinitions:
+      parameters:
+        end_date:
+          parameterType: STRING
+        filepath:
+          parameterType: STRING
+        start_date:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        augmented_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-augment-data-2:
+    executorLabel: exec-augment-data-2
+    inputDefinitions:
+      parameters:
+        end_date:
+          parameterType: STRING
+        filepath:
+          parameterType: STRING
+        start_date:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        augmented_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-augment-data-3:
+    executorLabel: exec-augment-data-3
+    inputDefinitions:
+      parameters:
+        end_date:
+          parameterType: STRING
+        filepath:
+          parameterType: STRING
+        start_date:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        augmented_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-augment-data-4:
+    executorLabel: exec-augment-data-4
+    inputDefinitions:
+      parameters:
+        end_date:
+          parameterType: STRING
+        filepath:
+          parameterType: STRING
+        start_date:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        augmented_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-generate-charts:
+    executorLabel: exec-generate-charts
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        end_date:
+          parameterType: STRING
+        start_date:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        plot:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-generate-charts-2:
+    executorLabel: exec-generate-charts-2
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        end_date:
+          parameterType: STRING
+        start_date:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        plot:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-generate-charts-3:
+    executorLabel: exec-generate-charts-3
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        end_date:
+          parameterType: STRING
+        start_date:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        plot:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-generate-charts-4:
+    executorLabel: exec-generate-charts-4
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        end_date:
+          parameterType: STRING
+        start_date:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        plot:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-generate-charts-5:
+    executorLabel: exec-generate-charts-5
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        end_date:
+          parameterType: STRING
+        start_date:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        plot:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-get-data-stats:
+    executorLabel: exec-get-data-stats
+    inputDefinitions:
+      artifacts:
+        df_aug:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+        df_origin:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        com_num:
+          parameterType: NUMBER_INTEGER
+    outputDefinitions:
+      artifacts:
+        df_stats:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-get-data-stats-2:
+    executorLabel: exec-get-data-stats-2
+    inputDefinitions:
+      artifacts:
+        df_aug:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+        df_origin:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        com_num:
+          parameterType: NUMBER_INTEGER
+    outputDefinitions:
+      artifacts:
+        df_stats:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-get-data-stats-3:
+    executorLabel: exec-get-data-stats-3
+    inputDefinitions:
+      artifacts:
+        df_aug:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+        df_origin:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        com_num:
+          parameterType: NUMBER_INTEGER
+    outputDefinitions:
+      artifacts:
+        df_stats:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-get-data-stats-4:
+    executorLabel: exec-get-data-stats-4
+    inputDefinitions:
+      artifacts:
+        df_aug:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+        df_origin:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        com_num:
+          parameterType: NUMBER_INTEGER
+    outputDefinitions:
+      artifacts:
+        df_stats:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-get-origin-stats:
+    executorLabel: exec-get-origin-stats
+    inputDefinitions:
+      artifacts:
+        df_origin:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+    outputDefinitions:
+      artifacts:
+        df_stats:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-label-data:
+    executorLabel: exec-label-data
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        label_name:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        labeled_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-label-data-2:
+    executorLabel: exec-label-data-2
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        label_name:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        labeled_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-label-data-3:
+    executorLabel: exec-label-data-3
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        label_name:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        labeled_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-label-data-4:
+    executorLabel: exec-label-data-4
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+      parameters:
+        label_name:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        labeled_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-label-origin-data:
+    executorLabel: exec-label-origin-data
+    inputDefinitions:
+      parameters:
+        filepath:
+          parameterType: STRING
+        label_name:
+          parameterType: STRING
+    outputDefinitions:
+      artifacts:
+        labeled_data:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-obtain-ta:
+    executorLabel: exec-obtain-ta
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+    outputDefinitions:
+      artifacts:
+        data_with_ta:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-obtain-ta-2:
+    executorLabel: exec-obtain-ta-2
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+    outputDefinitions:
+      artifacts:
+        data_with_ta:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-obtain-ta-3:
+    executorLabel: exec-obtain-ta-3
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+    outputDefinitions:
+      artifacts:
+        data_with_ta:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-obtain-ta-4:
+    executorLabel: exec-obtain-ta-4
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+    outputDefinitions:
+      artifacts:
+        data_with_ta:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+  comp-obtain-ta-5:
+    executorLabel: exec-obtain-ta-5
+    inputDefinitions:
+      artifacts:
+        df:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+    outputDefinitions:
+      artifacts:
+        data_with_ta:
+          artifactType:
+            schemaTitle: system.Dataset
+            schemaVersion: 0.0.1
+defaultPipelineRoot: gs://ta-charts-data/
+deploymentSpec:
+  executors:
+    exec-augment-data:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - augment_data
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef augment_data(\n    filepath: str,\n    start_date: str,\n   \
+          \ end_date: str,\n    augmented_data: Output[Dataset],\n):\n    import pandas\
+          \ as pd\n    import os \n    from utils.augment_price_data import augment_price_data,\
+          \ obtain_syn_data, labeling_function, tech_indicator_calc\n\n    df = pd.read_csv(\"\
+          gs://\" + filepath + '/*.csv')\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \n    spy_df_synth = obtain_syn_data(original_df=df, lam=0.6, start_date=start_date,\
+          \ end_date=end_date)\n    spy_df_synth.to_csv(augmented_data.path, index=False)\n\
+          \n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-augment-data-2:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - augment_data
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef augment_data(\n    filepath: str,\n    start_date: str,\n   \
+          \ end_date: str,\n    augmented_data: Output[Dataset],\n):\n    import pandas\
+          \ as pd\n    import os \n    from utils.augment_price_data import augment_price_data,\
+          \ obtain_syn_data, labeling_function, tech_indicator_calc\n\n    df = pd.read_csv(\"\
+          gs://\" + filepath + '/*.csv')\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \n    spy_df_synth = obtain_syn_data(original_df=df, lam=0.6, start_date=start_date,\
+          \ end_date=end_date)\n    spy_df_synth.to_csv(augmented_data.path, index=False)\n\
+          \n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-augment-data-3:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - augment_data
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef augment_data(\n    filepath: str,\n    start_date: str,\n   \
+          \ end_date: str,\n    augmented_data: Output[Dataset],\n):\n    import pandas\
+          \ as pd\n    import os \n    from utils.augment_price_data import augment_price_data,\
+          \ obtain_syn_data, labeling_function, tech_indicator_calc\n\n    df = pd.read_csv(\"\
+          gs://\" + filepath + '/*.csv')\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \n    spy_df_synth = obtain_syn_data(original_df=df, lam=0.6, start_date=start_date,\
+          \ end_date=end_date)\n    spy_df_synth.to_csv(augmented_data.path, index=False)\n\
+          \n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-augment-data-4:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - augment_data
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef augment_data(\n    filepath: str,\n    start_date: str,\n   \
+          \ end_date: str,\n    augmented_data: Output[Dataset],\n):\n    import pandas\
+          \ as pd\n    import os \n    from utils.augment_price_data import augment_price_data,\
+          \ obtain_syn_data, labeling_function, tech_indicator_calc\n\n    df = pd.read_csv(\"\
+          gs://\" + filepath + '/*.csv')\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \n    spy_df_synth = obtain_syn_data(original_df=df, lam=0.6, start_date=start_date,\
+          \ end_date=end_date)\n    spy_df_synth.to_csv(augmented_data.path, index=False)\n\
+          \n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-generate-charts:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - generate_charts
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef generate_charts(\n    df: Input[Dataset],\n    start_date: str,\n\
+          \    end_date: str,\n    plot: Output[Dataset]\n):\n    import pandas as\
+          \ pd\n    import os\n    import plotly.io as pio\n    import concurrent.futures\n\
+          \    from utils.augment_price_data import augment_price_data, obtain_syn_data,\
+          \ labeling_function, tech_indicator_calc\n    from utils.plotter import\
+          \ plotter\n\n    df = pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    start_date = pd.to_datetime(start_date).date()\n    end_date = pd.to_datetime(end_date).date()\n\
+          \    df = df[(df['datetime'].dt.date >= start_date) & (df['datetime'].dt.date\
+          \ <= end_date)]\n\n    num_of_bars_for_day = 78\n    num_of_bars_for_week\
+          \ = num_of_bars_for_day * 5\n\n    buy_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 1].datetime.to_list()\n    sell_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 2].datetime.to_list()\n    no_action_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 0].datetime.to_list()\n\n    def task(date):\n        label = df[df['datetime']\
+          \ == date]['label'].item()\n        date_str = date.strftime('%Y-%m-%d_%H-%M-%S')\n\
+          \        fig = plotter(df[df['datetime'] <= date].iloc[-num_of_bars_for_week:],\
+          \ 448, 448)\n\n        if label == 1:\n            if not os.path.exists(plot.path\
+          \ + \"/1/\"): os.makedirs(plot.path + \"/1/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/1/\" + date_str + \"_1.png\") \n            print(date_str\
+          \ + \"_1.png saved\")\n        elif label == 2:\n            if not os.path.exists(plot.path\
+          \ + \"/2/\"): os.makedirs(plot.path + \"/2/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/2/\" + date_str + \"_2.png\") \n            print(date_str\
+          \ + \"_2.png saved\")\n        else:\n            if not os.path.exists(plot.path\
+          \ + \"/0/\"): os.makedirs(plot.path + \"/0/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/0/\" + date_str + \"_0.png\") \n            print(date_str\
+          \ + \"_0.png saved\")\n\n    with concurrent.futures.ThreadPoolExecutor(max_workers=os.cpu_count())\
+          \ as executor:\n        for date_list in [buy_datetime_list, sell_datetime_list,\
+          \ no_action_datetime_list]:\n            for date in date_list:\n      \
+          \          executor.submit(task, date)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 4.0
+          memoryLimit: 16.0
+    exec-generate-charts-2:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - generate_charts
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef generate_charts(\n    df: Input[Dataset],\n    start_date: str,\n\
+          \    end_date: str,\n    plot: Output[Dataset]\n):\n    import pandas as\
+          \ pd\n    import os\n    import plotly.io as pio\n    import concurrent.futures\n\
+          \    from utils.augment_price_data import augment_price_data, obtain_syn_data,\
+          \ labeling_function, tech_indicator_calc\n    from utils.plotter import\
+          \ plotter\n\n    df = pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    start_date = pd.to_datetime(start_date).date()\n    end_date = pd.to_datetime(end_date).date()\n\
+          \    df = df[(df['datetime'].dt.date >= start_date) & (df['datetime'].dt.date\
+          \ <= end_date)]\n\n    num_of_bars_for_day = 78\n    num_of_bars_for_week\
+          \ = num_of_bars_for_day * 5\n\n    buy_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 1].datetime.to_list()\n    sell_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 2].datetime.to_list()\n    no_action_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 0].datetime.to_list()\n\n    def task(date):\n        label = df[df['datetime']\
+          \ == date]['label'].item()\n        date_str = date.strftime('%Y-%m-%d_%H-%M-%S')\n\
+          \        fig = plotter(df[df['datetime'] <= date].iloc[-num_of_bars_for_week:],\
+          \ 448, 448)\n\n        if label == 1:\n            if not os.path.exists(plot.path\
+          \ + \"/1/\"): os.makedirs(plot.path + \"/1/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/1/\" + date_str + \"_1.png\") \n            print(date_str\
+          \ + \"_1.png saved\")\n        elif label == 2:\n            if not os.path.exists(plot.path\
+          \ + \"/2/\"): os.makedirs(plot.path + \"/2/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/2/\" + date_str + \"_2.png\") \n            print(date_str\
+          \ + \"_2.png saved\")\n        else:\n            if not os.path.exists(plot.path\
+          \ + \"/0/\"): os.makedirs(plot.path + \"/0/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/0/\" + date_str + \"_0.png\") \n            print(date_str\
+          \ + \"_0.png saved\")\n\n    with concurrent.futures.ThreadPoolExecutor(max_workers=os.cpu_count())\
+          \ as executor:\n        for date_list in [buy_datetime_list, sell_datetime_list,\
+          \ no_action_datetime_list]:\n            for date in date_list:\n      \
+          \          executor.submit(task, date)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 4.0
+          memoryLimit: 16.0
+    exec-generate-charts-3:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - generate_charts
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef generate_charts(\n    df: Input[Dataset],\n    start_date: str,\n\
+          \    end_date: str,\n    plot: Output[Dataset]\n):\n    import pandas as\
+          \ pd\n    import os\n    import plotly.io as pio\n    import concurrent.futures\n\
+          \    from utils.augment_price_data import augment_price_data, obtain_syn_data,\
+          \ labeling_function, tech_indicator_calc\n    from utils.plotter import\
+          \ plotter\n\n    df = pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    start_date = pd.to_datetime(start_date).date()\n    end_date = pd.to_datetime(end_date).date()\n\
+          \    df = df[(df['datetime'].dt.date >= start_date) & (df['datetime'].dt.date\
+          \ <= end_date)]\n\n    num_of_bars_for_day = 78\n    num_of_bars_for_week\
+          \ = num_of_bars_for_day * 5\n\n    buy_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 1].datetime.to_list()\n    sell_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 2].datetime.to_list()\n    no_action_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 0].datetime.to_list()\n\n    def task(date):\n        label = df[df['datetime']\
+          \ == date]['label'].item()\n        date_str = date.strftime('%Y-%m-%d_%H-%M-%S')\n\
+          \        fig = plotter(df[df['datetime'] <= date].iloc[-num_of_bars_for_week:],\
+          \ 448, 448)\n\n        if label == 1:\n            if not os.path.exists(plot.path\
+          \ + \"/1/\"): os.makedirs(plot.path + \"/1/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/1/\" + date_str + \"_1.png\") \n            print(date_str\
+          \ + \"_1.png saved\")\n        elif label == 2:\n            if not os.path.exists(plot.path\
+          \ + \"/2/\"): os.makedirs(plot.path + \"/2/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/2/\" + date_str + \"_2.png\") \n            print(date_str\
+          \ + \"_2.png saved\")\n        else:\n            if not os.path.exists(plot.path\
+          \ + \"/0/\"): os.makedirs(plot.path + \"/0/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/0/\" + date_str + \"_0.png\") \n            print(date_str\
+          \ + \"_0.png saved\")\n\n    with concurrent.futures.ThreadPoolExecutor(max_workers=os.cpu_count())\
+          \ as executor:\n        for date_list in [buy_datetime_list, sell_datetime_list,\
+          \ no_action_datetime_list]:\n            for date in date_list:\n      \
+          \          executor.submit(task, date)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 4.0
+          memoryLimit: 16.0
+    exec-generate-charts-4:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - generate_charts
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef generate_charts(\n    df: Input[Dataset],\n    start_date: str,\n\
+          \    end_date: str,\n    plot: Output[Dataset]\n):\n    import pandas as\
+          \ pd\n    import os\n    import plotly.io as pio\n    import concurrent.futures\n\
+          \    from utils.augment_price_data import augment_price_data, obtain_syn_data,\
+          \ labeling_function, tech_indicator_calc\n    from utils.plotter import\
+          \ plotter\n\n    df = pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    start_date = pd.to_datetime(start_date).date()\n    end_date = pd.to_datetime(end_date).date()\n\
+          \    df = df[(df['datetime'].dt.date >= start_date) & (df['datetime'].dt.date\
+          \ <= end_date)]\n\n    num_of_bars_for_day = 78\n    num_of_bars_for_week\
+          \ = num_of_bars_for_day * 5\n\n    buy_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 1].datetime.to_list()\n    sell_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 2].datetime.to_list()\n    no_action_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 0].datetime.to_list()\n\n    def task(date):\n        label = df[df['datetime']\
+          \ == date]['label'].item()\n        date_str = date.strftime('%Y-%m-%d_%H-%M-%S')\n\
+          \        fig = plotter(df[df['datetime'] <= date].iloc[-num_of_bars_for_week:],\
+          \ 448, 448)\n\n        if label == 1:\n            if not os.path.exists(plot.path\
+          \ + \"/1/\"): os.makedirs(plot.path + \"/1/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/1/\" + date_str + \"_1.png\") \n            print(date_str\
+          \ + \"_1.png saved\")\n        elif label == 2:\n            if not os.path.exists(plot.path\
+          \ + \"/2/\"): os.makedirs(plot.path + \"/2/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/2/\" + date_str + \"_2.png\") \n            print(date_str\
+          \ + \"_2.png saved\")\n        else:\n            if not os.path.exists(plot.path\
+          \ + \"/0/\"): os.makedirs(plot.path + \"/0/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/0/\" + date_str + \"_0.png\") \n            print(date_str\
+          \ + \"_0.png saved\")\n\n    with concurrent.futures.ThreadPoolExecutor(max_workers=os.cpu_count())\
+          \ as executor:\n        for date_list in [buy_datetime_list, sell_datetime_list,\
+          \ no_action_datetime_list]:\n            for date in date_list:\n      \
+          \          executor.submit(task, date)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 4.0
+          memoryLimit: 16.0
+    exec-generate-charts-5:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - generate_charts
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef generate_charts(\n    df: Input[Dataset],\n    start_date: str,\n\
+          \    end_date: str,\n    plot: Output[Dataset]\n):\n    import pandas as\
+          \ pd\n    import os\n    import plotly.io as pio\n    import concurrent.futures\n\
+          \    from utils.augment_price_data import augment_price_data, obtain_syn_data,\
+          \ labeling_function, tech_indicator_calc\n    from utils.plotter import\
+          \ plotter\n\n    df = pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    start_date = pd.to_datetime(start_date).date()\n    end_date = pd.to_datetime(end_date).date()\n\
+          \    df = df[(df['datetime'].dt.date >= start_date) & (df['datetime'].dt.date\
+          \ <= end_date)]\n\n    num_of_bars_for_day = 78\n    num_of_bars_for_week\
+          \ = num_of_bars_for_day * 5\n\n    buy_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 1].datetime.to_list()\n    sell_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 2].datetime.to_list()\n    no_action_datetime_list = df.iloc[num_of_bars_for_week:-num_of_bars_for_day].loc[df['label']\
+          \ == 0].datetime.to_list()\n\n    def task(date):\n        label = df[df['datetime']\
+          \ == date]['label'].item()\n        date_str = date.strftime('%Y-%m-%d_%H-%M-%S')\n\
+          \        fig = plotter(df[df['datetime'] <= date].iloc[-num_of_bars_for_week:],\
+          \ 448, 448)\n\n        if label == 1:\n            if not os.path.exists(plot.path\
+          \ + \"/1/\"): os.makedirs(plot.path + \"/1/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/1/\" + date_str + \"_1.png\") \n            print(date_str\
+          \ + \"_1.png saved\")\n        elif label == 2:\n            if not os.path.exists(plot.path\
+          \ + \"/2/\"): os.makedirs(plot.path + \"/2/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/2/\" + date_str + \"_2.png\") \n            print(date_str\
+          \ + \"_2.png saved\")\n        else:\n            if not os.path.exists(plot.path\
+          \ + \"/0/\"): os.makedirs(plot.path + \"/0/\")\n            pio.write_image(fig,\
+          \ plot.path + \"/0/\" + date_str + \"_0.png\") \n            print(date_str\
+          \ + \"_0.png saved\")\n\n    with concurrent.futures.ThreadPoolExecutor(max_workers=os.cpu_count())\
+          \ as executor:\n        for date_list in [buy_datetime_list, sell_datetime_list,\
+          \ no_action_datetime_list]:\n            for date in date_list:\n      \
+          \          executor.submit(task, date)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 4.0
+          memoryLimit: 16.0
+    exec-get-data-stats:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - get_data_stats
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef get_data_stats(\n    df_origin: Input[Dataset],\n    df_aug:\
+          \ Input[Dataset],\n    com_num: int,\n    df_stats: Output[Dataset],\n):\n\
+          \    import pandas as pd\n    import json\n    from utils.augment_price_data\
+          \ import augment_price_data, obtain_syn_data, labeling_function, tech_indicator_calc\
+          \       \n\n    df_origin = pd.read_csv(df_origin.path)\n    df_aug = pd.read_csv(df_aug.path)\n\
+          \n    stats_of_dic = {}\n    stats_of_dic['name'] = f'aug_{com_num}'\n \
+          \   stats_of_dic['size'] = len(df_aug)\n    stats_of_dic['no_signals'] =\
+          \ len(df_aug[df_aug['label'] == 0])\n    stats_of_dic['buy_signals'] = len(df_aug[df_aug['label']\
+          \ == 1])\n    stats_of_dic['sell_signals'] = len(df_aug[df_aug['label']\
+          \ == 2])\n    stats_of_dic['buy_signals_ratio'] = stats_of_dic['buy_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['sell_signals_ratio'] = stats_of_dic['sell_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['no_signals_ratio'] = stats_of_dic['no_signals']\
+          \ / stats_of_dic['size']\n\n    # Differences between the two data\n   \
+          \ for i in ['open', 'high', 'low', 'close']:\n        s = df_origin[i]\n\
+          \        s_r = df_aug[i]\n\n        err = sum(abs(s-s_r))/len(s)\n     \
+          \   max_err = max(abs(s-s_r))\n\n        stats_of_dic[i + '_MAE'] = err\n\
+          \        stats_of_dic[i + '_MA_MAX'] = max_err\n\n    # Write JSON to a\
+          \ file\n    with open(df_stats.path, \"w\") as json_file:\n        json.dump(stats_of_dic,\
+          \ json_file)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-get-data-stats-2:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - get_data_stats
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef get_data_stats(\n    df_origin: Input[Dataset],\n    df_aug:\
+          \ Input[Dataset],\n    com_num: int,\n    df_stats: Output[Dataset],\n):\n\
+          \    import pandas as pd\n    import json\n    from utils.augment_price_data\
+          \ import augment_price_data, obtain_syn_data, labeling_function, tech_indicator_calc\
+          \       \n\n    df_origin = pd.read_csv(df_origin.path)\n    df_aug = pd.read_csv(df_aug.path)\n\
+          \n    stats_of_dic = {}\n    stats_of_dic['name'] = f'aug_{com_num}'\n \
+          \   stats_of_dic['size'] = len(df_aug)\n    stats_of_dic['no_signals'] =\
+          \ len(df_aug[df_aug['label'] == 0])\n    stats_of_dic['buy_signals'] = len(df_aug[df_aug['label']\
+          \ == 1])\n    stats_of_dic['sell_signals'] = len(df_aug[df_aug['label']\
+          \ == 2])\n    stats_of_dic['buy_signals_ratio'] = stats_of_dic['buy_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['sell_signals_ratio'] = stats_of_dic['sell_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['no_signals_ratio'] = stats_of_dic['no_signals']\
+          \ / stats_of_dic['size']\n\n    # Differences between the two data\n   \
+          \ for i in ['open', 'high', 'low', 'close']:\n        s = df_origin[i]\n\
+          \        s_r = df_aug[i]\n\n        err = sum(abs(s-s_r))/len(s)\n     \
+          \   max_err = max(abs(s-s_r))\n\n        stats_of_dic[i + '_MAE'] = err\n\
+          \        stats_of_dic[i + '_MA_MAX'] = max_err\n\n    # Write JSON to a\
+          \ file\n    with open(df_stats.path, \"w\") as json_file:\n        json.dump(stats_of_dic,\
+          \ json_file)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-get-data-stats-3:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - get_data_stats
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef get_data_stats(\n    df_origin: Input[Dataset],\n    df_aug:\
+          \ Input[Dataset],\n    com_num: int,\n    df_stats: Output[Dataset],\n):\n\
+          \    import pandas as pd\n    import json\n    from utils.augment_price_data\
+          \ import augment_price_data, obtain_syn_data, labeling_function, tech_indicator_calc\
+          \       \n\n    df_origin = pd.read_csv(df_origin.path)\n    df_aug = pd.read_csv(df_aug.path)\n\
+          \n    stats_of_dic = {}\n    stats_of_dic['name'] = f'aug_{com_num}'\n \
+          \   stats_of_dic['size'] = len(df_aug)\n    stats_of_dic['no_signals'] =\
+          \ len(df_aug[df_aug['label'] == 0])\n    stats_of_dic['buy_signals'] = len(df_aug[df_aug['label']\
+          \ == 1])\n    stats_of_dic['sell_signals'] = len(df_aug[df_aug['label']\
+          \ == 2])\n    stats_of_dic['buy_signals_ratio'] = stats_of_dic['buy_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['sell_signals_ratio'] = stats_of_dic['sell_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['no_signals_ratio'] = stats_of_dic['no_signals']\
+          \ / stats_of_dic['size']\n\n    # Differences between the two data\n   \
+          \ for i in ['open', 'high', 'low', 'close']:\n        s = df_origin[i]\n\
+          \        s_r = df_aug[i]\n\n        err = sum(abs(s-s_r))/len(s)\n     \
+          \   max_err = max(abs(s-s_r))\n\n        stats_of_dic[i + '_MAE'] = err\n\
+          \        stats_of_dic[i + '_MA_MAX'] = max_err\n\n    # Write JSON to a\
+          \ file\n    with open(df_stats.path, \"w\") as json_file:\n        json.dump(stats_of_dic,\
+          \ json_file)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-get-data-stats-4:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - get_data_stats
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef get_data_stats(\n    df_origin: Input[Dataset],\n    df_aug:\
+          \ Input[Dataset],\n    com_num: int,\n    df_stats: Output[Dataset],\n):\n\
+          \    import pandas as pd\n    import json\n    from utils.augment_price_data\
+          \ import augment_price_data, obtain_syn_data, labeling_function, tech_indicator_calc\
+          \       \n\n    df_origin = pd.read_csv(df_origin.path)\n    df_aug = pd.read_csv(df_aug.path)\n\
+          \n    stats_of_dic = {}\n    stats_of_dic['name'] = f'aug_{com_num}'\n \
+          \   stats_of_dic['size'] = len(df_aug)\n    stats_of_dic['no_signals'] =\
+          \ len(df_aug[df_aug['label'] == 0])\n    stats_of_dic['buy_signals'] = len(df_aug[df_aug['label']\
+          \ == 1])\n    stats_of_dic['sell_signals'] = len(df_aug[df_aug['label']\
+          \ == 2])\n    stats_of_dic['buy_signals_ratio'] = stats_of_dic['buy_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['sell_signals_ratio'] = stats_of_dic['sell_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['no_signals_ratio'] = stats_of_dic['no_signals']\
+          \ / stats_of_dic['size']\n\n    # Differences between the two data\n   \
+          \ for i in ['open', 'high', 'low', 'close']:\n        s = df_origin[i]\n\
+          \        s_r = df_aug[i]\n\n        err = sum(abs(s-s_r))/len(s)\n     \
+          \   max_err = max(abs(s-s_r))\n\n        stats_of_dic[i + '_MAE'] = err\n\
+          \        stats_of_dic[i + '_MA_MAX'] = max_err\n\n    # Write JSON to a\
+          \ file\n    with open(df_stats.path, \"w\") as json_file:\n        json.dump(stats_of_dic,\
+          \ json_file)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-get-origin-stats:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - get_origin_stats
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef get_origin_stats(\n    df_origin: Input[Dataset],\n    df_stats:\
+          \ Output[Dataset],\n):\n    import pandas as pd\n    import json\n    from\
+          \ utils.augment_price_data import augment_price_data, obtain_syn_data, labeling_function,\
+          \ tech_indicator_calc       \n\n    df_origin = pd.read_csv(df_origin.path)\n\
+          \n    stats_of_dic = {}\n    stats_of_dic['name'] = 'origin'\n    stats_of_dic['size']\
+          \ = len(df_origin)\n    stats_of_dic['no_signals'] = len(df_origin[df_origin['label']\
+          \ == 0])\n    stats_of_dic['buy_signals'] = len(df_origin[df_origin['label']\
+          \ == 1])\n    stats_of_dic['sell_signals'] = len(df_origin[df_origin['label']\
+          \ == 2])\n    stats_of_dic['buy_signals_ratio'] = stats_of_dic['buy_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['sell_signals_ratio'] = stats_of_dic['sell_signals']\
+          \ / stats_of_dic['size']\n    stats_of_dic['no_signals_ratio'] = stats_of_dic['no_signals']\
+          \ / stats_of_dic['size']\n\n    # Differences between the two data\n   \
+          \ for i in ['open', 'high', 'low', 'close']:\n        stats_of_dic[i + '_MAE']\
+          \ = 0\n        stats_of_dic[i + '_MA_MAX'] = 0\n\n    # Write JSON to a\
+          \ file\n    with open(df_stats.path, \"w\") as json_file:\n        json.dump(stats_of_dic,\
+          \ json_file)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-label-data:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - label_data
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef label_data(\n    df: Input[Dataset],\n    label_name: str,\n\
+          \    labeled_data: Output[Dataset],\n):\n    import pandas as pd\n    from\
+          \ utils.augment_price_data import augment_price_data, obtain_syn_data, labeling_function,\
+          \ tech_indicator_calc       \n\n    df = pd.read_csv(df.path)\n    df_labeled\
+          \ = labeling_function(df, label_name=label_name)\n    df_labeled.to_csv(labeled_data.path,\
+          \ index=True)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-label-data-2:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - label_data
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef label_data(\n    df: Input[Dataset],\n    label_name: str,\n\
+          \    labeled_data: Output[Dataset],\n):\n    import pandas as pd\n    from\
+          \ utils.augment_price_data import augment_price_data, obtain_syn_data, labeling_function,\
+          \ tech_indicator_calc       \n\n    df = pd.read_csv(df.path)\n    df_labeled\
+          \ = labeling_function(df, label_name=label_name)\n    df_labeled.to_csv(labeled_data.path,\
+          \ index=True)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-label-data-3:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - label_data
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef label_data(\n    df: Input[Dataset],\n    label_name: str,\n\
+          \    labeled_data: Output[Dataset],\n):\n    import pandas as pd\n    from\
+          \ utils.augment_price_data import augment_price_data, obtain_syn_data, labeling_function,\
+          \ tech_indicator_calc       \n\n    df = pd.read_csv(df.path)\n    df_labeled\
+          \ = labeling_function(df, label_name=label_name)\n    df_labeled.to_csv(labeled_data.path,\
+          \ index=True)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-label-data-4:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - label_data
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef label_data(\n    df: Input[Dataset],\n    label_name: str,\n\
+          \    labeled_data: Output[Dataset],\n):\n    import pandas as pd\n    from\
+          \ utils.augment_price_data import augment_price_data, obtain_syn_data, labeling_function,\
+          \ tech_indicator_calc       \n\n    df = pd.read_csv(df.path)\n    df_labeled\
+          \ = labeling_function(df, label_name=label_name)\n    df_labeled.to_csv(labeled_data.path,\
+          \ index=True)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-label-origin-data:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - label_origin_data
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef label_origin_data(\n    filepath: str,\n    label_name: str,\n\
+          \    labeled_data: Output[Dataset],\n):\n    import pandas as pd\n    from\
+          \ utils.augment_price_data import augment_price_data, obtain_syn_data, labeling_function,\
+          \ tech_indicator_calc       \n\n    df = pd.read_csv(\"gs://\" + filepath\
+          \ + '/*.csv')\n    df['datetime'] = pd.to_datetime(df['datetime'])\n   \
+          \ df_labeled = labeling_function(df, label_name=label_name)\n    df_labeled.to_csv(labeled_data.path,\
+          \ index=True)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-obtain-ta:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - obtain_ta
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef obtain_ta(\n    df: Input[Dataset],\n    data_with_ta: Output[Dataset],\n\
+          ):\n    import pandas as pd\n    from utils.augment_price_data import augment_price_data,\
+          \ obtain_syn_data, labeling_function, tech_indicator_calc   \n\n    df =\
+          \ pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    df.set_index('datetime', inplace=True)\n    df_with_ta = tech_indicator_calc(df)\n\
+          \    df_with_ta.to_csv(data_with_ta.path, index=False)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-obtain-ta-2:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - obtain_ta
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef obtain_ta(\n    df: Input[Dataset],\n    data_with_ta: Output[Dataset],\n\
+          ):\n    import pandas as pd\n    from utils.augment_price_data import augment_price_data,\
+          \ obtain_syn_data, labeling_function, tech_indicator_calc   \n\n    df =\
+          \ pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    df.set_index('datetime', inplace=True)\n    df_with_ta = tech_indicator_calc(df)\n\
+          \    df_with_ta.to_csv(data_with_ta.path, index=False)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-obtain-ta-3:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - obtain_ta
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef obtain_ta(\n    df: Input[Dataset],\n    data_with_ta: Output[Dataset],\n\
+          ):\n    import pandas as pd\n    from utils.augment_price_data import augment_price_data,\
+          \ obtain_syn_data, labeling_function, tech_indicator_calc   \n\n    df =\
+          \ pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    df.set_index('datetime', inplace=True)\n    df_with_ta = tech_indicator_calc(df)\n\
+          \    df_with_ta.to_csv(data_with_ta.path, index=False)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-obtain-ta-4:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - obtain_ta
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef obtain_ta(\n    df: Input[Dataset],\n    data_with_ta: Output[Dataset],\n\
+          ):\n    import pandas as pd\n    from utils.augment_price_data import augment_price_data,\
+          \ obtain_syn_data, labeling_function, tech_indicator_calc   \n\n    df =\
+          \ pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    df.set_index('datetime', inplace=True)\n    df_with_ta = tech_indicator_calc(df)\n\
+          \    df_with_ta.to_csv(data_with_ta.path, index=False)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+    exec-obtain-ta-5:
+      container:
+        args:
+        - --executor_input
+        - '{{$}}'
+        - --function_to_execute
+        - obtain_ta
+        command:
+        - sh
+        - -c
+        - "\nif ! [ -x \"$(command -v pip)\" ]; then\n    python3 -m ensurepip ||\
+          \ python3 -m ensurepip --user || apt-get install python3-pip\nfi\n\nPIP_DISABLE_PIP_VERSION_CHECK=1\
+          \ python3 -m pip install --quiet --no-warn-script-location 'kfp==2.6.0'\
+          \ '--no-deps' 'typing-extensions>=3.7.4,<5; python_version<\"3.9\"' && \"\
+          $0\" \"$@\"\n"
+        - sh
+        - -ec
+        - 'program_path=$(mktemp -d)
+
+
+          printf "%s" "$0" > "$program_path/ephemeral_component.py"
+
+          _KFP_RUNTIME=true python3 -m kfp.dsl.executor_main                         --component_module_path                         "$program_path/ephemeral_component.py"                         "$@"
+
+          '
+        - "\nimport kfp\nfrom kfp import dsl\nfrom kfp.dsl import *\nfrom typing import\
+          \ *\n\ndef obtain_ta(\n    df: Input[Dataset],\n    data_with_ta: Output[Dataset],\n\
+          ):\n    import pandas as pd\n    from utils.augment_price_data import augment_price_data,\
+          \ obtain_syn_data, labeling_function, tech_indicator_calc   \n\n    df =\
+          \ pd.read_csv(df.path)\n    df['datetime'] = pd.to_datetime(df['datetime'])\n\
+          \    df.set_index('datetime', inplace=True)\n    df_with_ta = tech_indicator_calc(df)\n\
+          \    df_with_ta.to_csv(data_with_ta.path, index=False)\n\n"
+        image: us-east1-docker.pkg.dev/ta-model-data-preprocess/ta-model-pipelines/data_augmentation_test_5:test
+        resources:
+          cpuLimit: 1.0
+          memoryLimit: 4.0
+pipelineInfo:
+  name: data-preprocess-pipeline
+root:
+  dag:
+    tasks:
+      augment-data:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-augment-data
+        inputs:
+          parameters:
+            end_date:
+              componentInputParameter: end_date
+            filepath:
+              componentInputParameter: data_filepath
+            start_date:
+              componentInputParameter: start_date
+        taskInfo:
+          name: augment-data
+      augment-data-2:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-augment-data-2
+        inputs:
+          parameters:
+            end_date:
+              componentInputParameter: end_date
+            filepath:
+              componentInputParameter: data_filepath
+            start_date:
+              componentInputParameter: start_date
+        taskInfo:
+          name: augment-data-2
+      augment-data-3:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-augment-data-3
+        inputs:
+          parameters:
+            end_date:
+              componentInputParameter: end_date
+            filepath:
+              componentInputParameter: data_filepath
+            start_date:
+              componentInputParameter: start_date
+        taskInfo:
+          name: augment-data-3
+      augment-data-4:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-augment-data-4
+        inputs:
+          parameters:
+            end_date:
+              componentInputParameter: end_date
+            filepath:
+              componentInputParameter: data_filepath
+            start_date:
+              componentInputParameter: start_date
+        taskInfo:
+          name: augment-data-4
+      generate-charts:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-generate-charts
+        dependentTasks:
+        - obtain-ta
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: data_with_ta
+                producerTask: obtain-ta
+          parameters:
+            end_date:
+              componentInputParameter: end_date
+            start_date:
+              componentInputParameter: start_date
+        taskInfo:
+          name: generate-charts
+      generate-charts-2:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-generate-charts-2
+        dependentTasks:
+        - obtain-ta-2
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: data_with_ta
+                producerTask: obtain-ta-2
+          parameters:
+            end_date:
+              componentInputParameter: end_date_aug
+            start_date:
+              componentInputParameter: start_date_aug
+        taskInfo:
+          name: generate-charts-2
+      generate-charts-3:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-generate-charts-3
+        dependentTasks:
+        - obtain-ta-3
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: data_with_ta
+                producerTask: obtain-ta-3
+          parameters:
+            end_date:
+              componentInputParameter: end_date_aug
+            start_date:
+              componentInputParameter: start_date_aug
+        taskInfo:
+          name: generate-charts-3
+      generate-charts-4:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-generate-charts-4
+        dependentTasks:
+        - obtain-ta-4
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: data_with_ta
+                producerTask: obtain-ta-4
+          parameters:
+            end_date:
+              componentInputParameter: end_date_aug
+            start_date:
+              componentInputParameter: start_date_aug
+        taskInfo:
+          name: generate-charts-4
+      generate-charts-5:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-generate-charts-5
+        dependentTasks:
+        - obtain-ta-5
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: data_with_ta
+                producerTask: obtain-ta-5
+          parameters:
+            end_date:
+              componentInputParameter: end_date_aug
+            start_date:
+              componentInputParameter: start_date_aug
+        taskInfo:
+          name: generate-charts-5
+      get-data-stats:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-get-data-stats
+        dependentTasks:
+        - label-data
+        - label-origin-data
+        inputs:
+          artifacts:
+            df_aug:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-data
+            df_origin:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-origin-data
+          parameters:
+            com_num:
+              runtimeValue:
+                constant: 0.0
+        taskInfo:
+          name: get-data-stats
+      get-data-stats-2:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-get-data-stats-2
+        dependentTasks:
+        - label-data-2
+        - label-origin-data
+        inputs:
+          artifacts:
+            df_aug:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-data-2
+            df_origin:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-origin-data
+          parameters:
+            com_num:
+              runtimeValue:
+                constant: 1.0
+        taskInfo:
+          name: get-data-stats-2
+      get-data-stats-3:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-get-data-stats-3
+        dependentTasks:
+        - label-data-3
+        - label-origin-data
+        inputs:
+          artifacts:
+            df_aug:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-data-3
+            df_origin:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-origin-data
+          parameters:
+            com_num:
+              runtimeValue:
+                constant: 2.0
+        taskInfo:
+          name: get-data-stats-3
+      get-data-stats-4:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-get-data-stats-4
+        dependentTasks:
+        - label-data-4
+        - label-origin-data
+        inputs:
+          artifacts:
+            df_aug:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-data-4
+            df_origin:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-origin-data
+          parameters:
+            com_num:
+              runtimeValue:
+                constant: 3.0
+        taskInfo:
+          name: get-data-stats-4
+      get-origin-stats:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-get-origin-stats
+        dependentTasks:
+        - label-origin-data
+        inputs:
+          artifacts:
+            df_origin:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-origin-data
+        taskInfo:
+          name: get-origin-stats
+      label-data:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-label-data
+        dependentTasks:
+        - augment-data
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: augmented_data
+                producerTask: augment-data
+          parameters:
+            label_name:
+              runtimeValue:
+                constant: label
+        taskInfo:
+          name: label-data
+      label-data-2:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-label-data-2
+        dependentTasks:
+        - augment-data-2
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: augmented_data
+                producerTask: augment-data-2
+          parameters:
+            label_name:
+              runtimeValue:
+                constant: label
+        taskInfo:
+          name: label-data-2
+      label-data-3:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-label-data-3
+        dependentTasks:
+        - augment-data-3
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: augmented_data
+                producerTask: augment-data-3
+          parameters:
+            label_name:
+              runtimeValue:
+                constant: label
+        taskInfo:
+          name: label-data-3
+      label-data-4:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-label-data-4
+        dependentTasks:
+        - augment-data-4
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: augmented_data
+                producerTask: augment-data-4
+          parameters:
+            label_name:
+              runtimeValue:
+                constant: label
+        taskInfo:
+          name: label-data-4
+      label-origin-data:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-label-origin-data
+        inputs:
+          parameters:
+            filepath:
+              componentInputParameter: data_filepath
+            label_name:
+              runtimeValue:
+                constant: label
+        taskInfo:
+          name: label-origin-data
+      obtain-ta:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-obtain-ta
+        dependentTasks:
+        - label-origin-data
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-origin-data
+        taskInfo:
+          name: obtain-ta
+      obtain-ta-2:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-obtain-ta-2
+        dependentTasks:
+        - label-data
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-data
+        taskInfo:
+          name: obtain-ta-2
+      obtain-ta-3:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-obtain-ta-3
+        dependentTasks:
+        - label-data-2
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-data-2
+        taskInfo:
+          name: obtain-ta-3
+      obtain-ta-4:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-obtain-ta-4
+        dependentTasks:
+        - label-data-3
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-data-3
+        taskInfo:
+          name: obtain-ta-4
+      obtain-ta-5:
+        cachingOptions:
+          enableCache: true
+        componentRef:
+          name: comp-obtain-ta-5
+        dependentTasks:
+        - label-data-4
+        inputs:
+          artifacts:
+            df:
+              taskOutputArtifact:
+                outputArtifactKey: labeled_data
+                producerTask: label-data-4
+        taskInfo:
+          name: obtain-ta-5
+  inputDefinitions:
+    parameters:
+      data_filepath:
+        defaultValue: ta-charts-data/origin_data
+        isOptional: true
+        parameterType: STRING
+      display_name:
+        defaultValue: data-pipeline-job20240208162403
+        isOptional: true
+        parameterType: STRING
+      end_date:
+        defaultValue: '2023-12-22'
+        isOptional: true
+        parameterType: STRING
+      end_date_aug:
+        defaultValue: '2021-12-31'
+        isOptional: true
+        parameterType: STRING
+      project:
+        defaultValue: TA-model-data-preprocess
+        isOptional: true
+        parameterType: STRING
+      region:
+        defaultValue: us-east1
+        isOptional: true
+        parameterType: STRING
+      start_date:
+        defaultValue: '2000-01-04'
+        isOptional: true
+        parameterType: STRING
+      start_date_aug:
+        defaultValue: '2000-01-04'
+        isOptional: true
+        parameterType: STRING
+schemaVersion: 2.1.0
+sdkVersion: kfp-2.6.0

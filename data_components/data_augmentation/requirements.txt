@@ -1,0 +1,11 @@
+pandas
+pandas_market_calendars
+tqdm
+PyWavelets
+matplotlib
+plotly
+IPython
+gcsfs
+ta
+google-cloud-pipeline-components
+kaleido

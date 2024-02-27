@@ -1,0 +1,13 @@
+# Specifies base image and tag.
+#FROM python:3.10-slim
+FROM us-docker.pkg.dev/deeplearning-platform-release/gcr.io/base-cu113.py310
+# Copy the data_preprocess.py file to the container image.
+COPY . .
+
+# Install dependencies.
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+# Run the data_preprocess.py file.
+#CMD ["python", "data_preprocess_2.py"]
+#ENTRYPOINT ["python", "data_preprocess_2.py"]
+ENTRYPOINT [ "bash" ]

@@ -1,5 +1,6 @@
-# Specifies base image and tag.
-FROM gcr.io/deeplearning-platform-release/pytorch-gpu.1-12
+# Specifies python image and tag.
+FROM gcr.io/google-appengine/python
+
 
 # Allow statements and log messages to immediately appear in the Knative logs
 ENV PYTHONUNBUFFERED True
